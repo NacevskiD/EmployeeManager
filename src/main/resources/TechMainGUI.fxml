@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerTechMainGUI">
+   <children>
+      <TableView fx:id="techTable" layoutY="41.0" onMouseClicked="#onTableClick" prefHeight="361.0" prefWidth="600.0" AnchorPane.bottomAnchor="20.0" AnchorPane.topAnchor="19.0">
+        <columns>
+          <TableColumn fx:id="ticketIDCol" prefWidth="292.0" text="Ticket ID" />
+          <TableColumn fx:id="datePostedCol" prefWidth="307.0" text="Posted Date" />
+        </columns>
+      </TableView>
+      <Label fx:id="loggedInAs" layoutX="551.0" layoutY="376.0" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Label fx:id="ticketsSolved" layoutX="558.0" layoutY="4.0" text="Label" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Label fx:id="ticketInProgress" layoutX="-3.0" layoutY="4.0" text="Label" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>Midterm</groupId>
+    <artifactId>Midterm</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <properties>
+
+        <INSTANCE_CONNECTION_NAME>employeedb-220917:us-central1:empdb</INSTANCE_CONNECTION_NAME>
+        <user>root</user>
+        <password>david09</password>
+        <database>employees</database>
+
+
+      </properties>
+
+    <build>
+
+
+
+
+<plugins>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+            <webResources>
+                <!-- in order to interpolate version from pom into appengine-web.xml -->
+                <resource>
+                    <directory>${basedir}/src/main/webapp/WEB-INF</directory>
+                    <filtering>true</filtering>
+                    <targetPath>WEB-INF</targetPath>
+                </resource>
+            </webResources>
+        </configuration>
+    </plugin>
+
+    <plugin>
+        <groupId>com.google.cloud.tools</groupId>
+        <artifactId>appengine-maven-plugin</artifactId>
+        <version>1.3.1</version>
+        <configuration>
+            <deploy.promote>true</deploy.promote>
+            <deploy.stopPreviousVersion>true</deploy.stopPreviousVersion>
+        </configuration>
+    </plugin>
+</plugins>
+
+    </build>
+
+    <dependencies>
+        <dependency> <!-- Only used locally -->
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.42</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.cloud.sql</groupId>
+            <artifactId>mysql-socket-factory</artifactId>
+            <version>1.0.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-gmail</artifactId>
+            <version>v1-rev96-1.25.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-core</artifactId>
+            <version>1.19.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>1.19.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey.contribs</groupId>
+            <artifactId>jersey-multipart</artifactId>
+            <version>1.19.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mailjet</groupId>
+            <artifactId>mailjet-client</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client</artifactId>
+            <version>1.22.0</version>
+        </dependency>
+    </dependencies>
+
+      </project>
